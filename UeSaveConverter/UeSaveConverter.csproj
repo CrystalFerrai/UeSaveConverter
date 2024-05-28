@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<ProductName>UeSaveConverter</ProductName>
+	<Description>UeSaveConverter</Description>
+	<Authors>Crystal Ferrai</Authors>
+	<Copyright>Copyright © 2024 Crystal Ferrai</Copyright>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UeSaveGame\UeSaveGame.Json\UeSaveGame.Json.csproj" />
+  </ItemGroup>
+
+</Project>

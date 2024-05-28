@@ -1,0 +1,7 @@
+*.bat
+/.vs/**
+**/*.user
+**/launchSettings.json
+/*/bin/**
+/*/obj/**
+/package/**

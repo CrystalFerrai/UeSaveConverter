@@ -1,0 +1,3 @@
+[submodule "UeSaveGame"]
+	path = UeSaveGame
+	url = https://github.com/CrystalFerrai/UeSaveGame.git
