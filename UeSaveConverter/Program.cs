@@ -23,8 +23,6 @@ namespace UeSaveConverter
 		/// </summary>
 		private static int Main(string[] args)
 		{
-			StructProperty strp = new(new("temp"));
-
 			ConsoleLogger logger = new();
 
 			Options? options;

@@ -13,8 +13,8 @@
 	<Description>UeSaveConverter</Description>
 	<Authors>Crystal Ferrai</Authors>
 	<Copyright>Copyright © 2024 Crystal Ferrai</Copyright>
-	<AssemblyVersion>1.0.0.0</AssemblyVersion>
-	<FileVersion>1.0.0.0</FileVersion>
+	<AssemblyVersion>1.0.1.0</AssemblyVersion>
+	<FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
