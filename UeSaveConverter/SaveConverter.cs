@@ -1,4 +1,4 @@
-﻿// Copyright 2024 Crystal Ferrai
+﻿// Copyright 2025 Crystal Ferrai
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ namespace UeSaveConverter
 				default:
 					throw new ConverterException("Internal program error (Invalid input type).", false);
 			}
-        }
+		}
 
 		/// <summary>
 		/// Creates an output file path for a conversion
@@ -136,24 +136,24 @@ namespace UeSaveConverter
 			try
 			{
 #endif
-				using FileStream inFile = File.OpenRead(inPath);
-				using FileStream outFile = IOUtil.CreateFile(outPath, mLogger);
+			using FileStream inFile = File.OpenRead(inPath);
+			using FileStream outFile = IOUtil.CreateFile(outPath, mLogger);
 
-				mLogger.Log(LogLevel.Information, $"Converting \"{inPath}\" -> \"{outPath}\"");
+			mLogger.Log(LogLevel.Information, $"Converting \"{inPath}\" -> \"{outPath}\"");
 
-				switch (mOptions.OperatingMode)
-				{
-					case OperatingMode.ToSav:
-						mSerializer.ConvertFromJson(inFile, outFile);
-						break;
-					case OperatingMode.ToJson:
-						mSerializer.ConvertToJson(inFile, outFile);
-						break;
-					default:
-						throw new ConverterException("Internal program error (Invalid operating mode).", false);
-				}
+			switch (mOptions.OperatingMode)
+			{
+				case OperatingMode.ToSav:
+					mSerializer.ConvertFromJson(inFile, outFile);
+					break;
+				case OperatingMode.ToJson:
+					mSerializer.ConvertToJson(inFile, outFile);
+					break;
+				default:
+					throw new ConverterException("Internal program error (Invalid operating mode).", false);
+			}
 
-				return true;
+			return true;
 #if !DEBUG
 			}
 			catch (ConverterException ex)

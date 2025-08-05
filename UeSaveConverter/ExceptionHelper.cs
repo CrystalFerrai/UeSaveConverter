@@ -1,4 +1,4 @@
-﻿// Copyright 2024 Crystal Ferrai
+﻿// Copyright 2025 Crystal Ferrai
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ namespace UeSaveConverter
 		public static void PrintException(Exception ex, Logger logger)
 		{
 			logger.LogError($"[{ex.GetType().FullName}] {ex.Message}");
-			
+
 			for (Exception? inner = ex.InnerException; inner is not null; inner = inner.InnerException)
 			{
 				logger.LogError($"(Caused by) [{ex.GetType().FullName}] {ex.Message}");

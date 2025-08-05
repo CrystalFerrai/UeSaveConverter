@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Platforms>x64</Platforms>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>net6.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<Platforms>x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UeSaveGame\UeSaveGame.Json\UeSaveGame.Json.csproj" />
+	<ProjectReference Include="..\UeSaveGame\UeSaveGame.Json\UeSaveGame.Json.csproj" />
   </ItemGroup>
 
 </Project>
