@@ -40,16 +40,18 @@ namespace UeSaveConverter.Serializers
 			return Version > 0 ? VersionPropertyName.Length + 5 + 4 + 4 + 4 : 0;
 		}
 
-		public override void DeserializeHeader(BinaryReader reader)
+		public override void DeserializeHeader(BinaryReader reader, PackageVersion packageVersion)
 		{
-			long startPos = reader.BaseStream.Position;
+			if (packageVersion < EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+			{
+				// Old save file version has no custom header
+				return;
+			}
 
 			FString? versionPropertyName = reader.ReadUnrealString();
 			if (versionPropertyName is null || versionPropertyName != VersionPropertyName)
 			{
-				// Might be old version of save file before custom header was added
-				reader.BaseStream.Seek(startPos, SeekOrigin.Begin);
-				return;
+				throw new InvalidDataException($"File is missing expected custom header {VersionPropertyName}");
 			}
 
 			Version = reader.ReadInt32();
@@ -57,9 +59,13 @@ namespace UeSaveConverter.Serializers
 			mDataLength = reader.ReadInt32();
 		}
 
-		public override void SerializeHeader(BinaryWriter writer, long dataLength)
+		public override void SerializeHeader(BinaryWriter writer, long dataLength, PackageVersion packageVersion)
 		{
-			if (Version == 0) return;
+			if (packageVersion < EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+			{
+				// Old save file version has no custom header
+				return;
+			}
 
 			mDataLength = (int)dataLength;
 
@@ -121,26 +127,25 @@ namespace UeSaveConverter.Serializers
 			return Version > 0 ? 4 + 4 : 0;
 		}
 
-		public override void DeserializeHeader(BinaryReader reader)
+		public override void DeserializeHeader(BinaryReader reader, PackageVersion packageVersion)
 		{
-			long startPos = reader.BaseStream.Position;
+			if (packageVersion < EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+			{
+				// Old save file version has no custom header
+				return;
+			}
 
 			Version = reader.ReadInt32();
 			mDataLength = reader.ReadInt32();
-
-			if (mDataLength == 1918986307)
-			{
-				// Old save file format from before custom headers were added
-				Version = 0;
-				mDataLength = 0;
-
-				reader.BaseStream.Seek(startPos, SeekOrigin.Begin);
-			}
 		}
 
-		public override void SerializeHeader(BinaryWriter writer, long dataLength)
+		public override void SerializeHeader(BinaryWriter writer, long dataLength, PackageVersion packageVersion)
 		{
-			if (Version == 0) return;
+			if (packageVersion < EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+			{
+				// Old save file version has no custom header
+				return;
+			}
 
 			mDataLength = (int)dataLength;
 
