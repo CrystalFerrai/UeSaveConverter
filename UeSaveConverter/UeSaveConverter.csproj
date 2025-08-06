@@ -12,11 +12,11 @@
 	<ProductName>UeSaveConverter</ProductName>
 	<Description>UeSaveConverter</Description>
 	<Authors>Crystal Ferrai</Authors>
-	<Copyright>Copyright © 2024 Crystal Ferrai</Copyright>
-	<Version>1.0.1.0</Version>
-	<ProductVersion>1.0.1.0</ProductVersion>
-	<AssemblyVersion>1.0.1.0</AssemblyVersion>
-	<FileVersion>1.0.1.0</FileVersion>
+	<Copyright>Copyright © 2025 Crystal Ferrai</Copyright>
+	<Version>1.1.1.0</Version>
+	<ProductVersion>1.1.1.0</ProductVersion>
+	<AssemblyVersion>1.1.1.0</AssemblyVersion>
+	<FileVersion>1.1.1.0</FileVersion>
 	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
