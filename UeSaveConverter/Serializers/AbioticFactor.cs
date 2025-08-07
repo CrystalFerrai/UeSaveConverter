@@ -35,9 +35,11 @@ namespace UeSaveConverter.Serializers
 
 		public override bool HasCustomHeader => true;
 
-		public override long GetHeaderSize()
+		public override long GetHeaderSize(PackageVersion packageVersion)
 		{
-			return Version > 0 ? VersionPropertyName.Length + 5 + 4 + 4 + 4 : 0;
+			return packageVersion >= EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME
+				? VersionPropertyName.Length + 5 + 4 + 4 + 4
+				: 0;
 		}
 
 		public override void DeserializeHeader(BinaryReader reader, PackageVersion packageVersion)
@@ -122,9 +124,11 @@ namespace UeSaveConverter.Serializers
 
 		public override bool HasCustomHeader => true;
 
-		public override long GetHeaderSize()
+		public override long GetHeaderSize(PackageVersion packageVersion)
 		{
-			return Version > 0 ? 4 + 4 : 0;
+			return packageVersion >= EObjectUE5Version.PROPERTY_TAG_COMPLETE_TYPE_NAME
+				? 4 + 4
+				: 0;
 		}
 
 		public override void DeserializeHeader(BinaryReader reader, PackageVersion packageVersion)
