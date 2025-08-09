@@ -6,7 +6,9 @@ A command line program that converts Unreal Engine save game files to and from a
 
 Releases can be found [here](https://github.com/CrystalFerrai/UeSaveConverter/releases). There is no installer, just unzip the contents to a location on your hard drive.
 
-You will need to have the .NET Runtime 6.0 x64 installed. You can find the latest .NET 6 downloads [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0). Look for ".NET Runtime" or ".NET Desktop Runtime" (which includes .NET Runtime). Download and install the x64 version for your OS.
+You will need to have the .NET Runtime 8.0 x64 installed. You can find the latest .NET 8 downloads [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). Look for ".NET Runtime" or ".NET Desktop Runtime" (which includes .NET Runtime). Download and install the x64 version for your OS.
+
+**For older releases prioer to version 1.2**, you will need to have the .NET Runtime 6.0 x64 installed (instead of .NET 8.0). You can find the latest .NET 6 downloads [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0). Look for ".NET Runtime" or ".NET Desktop Runtime" (which includes .NET Runtime). Download and install the x64 version for your OS.
 
 ## How to Use
 

@@ -42,11 +42,5 @@ namespace UeSaveConverter
 		{
 			IsRecoverable = isRecoverable;
 		}
-
-		protected ConverterException(SerializationInfo info, StreamingContext context)
-			: base(info, context)
-		{
-			IsRecoverable = (bool)(info.GetValue(nameof(IsRecoverable), typeof(bool)) ?? false);
-		}
 	}
 }
